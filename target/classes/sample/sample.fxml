@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutX="-7.0" prefHeight="100.0" prefWidth="809.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="WHITE" layoutX="286.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Pipeline System" wrappingWidth="236.189453125">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableSystem" layoutX="14.0" layoutY="175.0" prefHeight="265.0" prefWidth="212.0">
+        <columns>
+          <TableColumn fx:id="startPointColumn" prefWidth="69.0" text="idX" />
+          <TableColumn fx:id="finishPointColumn" prefWidth="66.0" text="idY" />
+            <TableColumn fx:id="lengthColumn" prefWidth="76.0" text="length" />
+        </columns>
+      </TableView>
+      <TableView fx:id="routsData" layoutX="291.0" layoutY="175.0" prefHeight="265.0" prefWidth="144.0">
+        <columns>
+          <TableColumn fx:id="idA" prefWidth="75.0" text="idA" />
+          <TableColumn fx:id="idB" prefWidth="75.0" text="idB" />
+        </columns>
+      </TableView>
+      <Text layoutX="44.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table that describes the water pipeline system" wrappingWidth="136.83203125">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="291.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table  with a set of points, between which need to find the route" wrappingWidth="171.712890625">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="539.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result shows below">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="resultTable" layoutX="569.0" layoutY="175.0" prefHeight="200.0" prefWidth="109.0">
+        <columns>
+          <TableColumn fx:id="resultColumn" prefWidth="108.0" text="result" />
+        </columns>
+      </TableView>
+      <TextField fx:id="outStartPoint" layoutX="27.0" layoutY="502.0" prefHeight="25.0" prefWidth="41.0" />
+      <TextField fx:id="outFinishPoint" layoutX="81.0" layoutY="502.0" prefHeight="25.0" prefWidth="41.0" />
+      <TextField fx:id="outLength" layoutX="135.0" layoutY="502.0" prefHeight="25.0" prefWidth="41.0" />
+      <Button fx:id="buttonChangeFirstTable" layoutX="83.0" layoutY="544.0" mnemonicParsing="false" onAction="#ClickToChangeFirstTable" text="Add" />
+      <Button fx:id="buttonAddPoints" layoutX="358.0" layoutY="544.0" mnemonicParsing="false" onAction="#ClickToAddPoints" text="Add" />
+      <TextField fx:id="outIdA" layoutX="311.0" layoutY="502.0" prefHeight="25.0" prefWidth="41.0" />
+      <TextField fx:id="outIdB" layoutX="400.0" layoutY="502.0" prefHeight="25.0" prefWidth="41.0" />
+      <Text layoutX="14.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use buttons below to add datas in tables(CSV files)">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
