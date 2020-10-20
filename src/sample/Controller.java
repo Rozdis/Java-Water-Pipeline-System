@@ -310,11 +310,14 @@ public class Controller {
         }
         return null;
     }
-    static void createSimpleDBSchema(Connection con) {
+    void createSimpleDBSchema(Connection con) {
         try (Statement stmt = con.createStatement()) {
-
-            stmt.executeUpdate("CREATE TABLE Pipeline_system (id number , start_point number, finish_point number, length number);");
-
+            statement = con.createStatement();
+            rs = statement.executeQuery("SHOW TABLES;");
+            if (!rs.next()) {
+                stmt.executeUpdate("CREATE TABLE Pipeline_system (id number , start_point number, finish_point number, length number);");
+            }
+            statement.close();
 
         } catch (SQLException e) {
             System.err.printf("%s: %s\n", e.getClass().getSimpleName(), e.getMessage());
