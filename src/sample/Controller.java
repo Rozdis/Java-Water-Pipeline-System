@@ -178,6 +178,7 @@ public class Controller {
             Class.forName(JDBC_DRIVER);
 
             connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            createSimpleDBSchema(connection);
             statement = connection.createStatement();
             String query = "delete from Pipeline_system";
             statement.execute(query);
@@ -308,5 +309,15 @@ public class Controller {
             }
         }
         return null;
+    }
+    static void createSimpleDBSchema(Connection con) {
+        try (Statement stmt = con.createStatement()) {
+
+            stmt.executeUpdate("CREATE TABLE Pipeline_system (id number , start_point number, finish_point number, length number);");
+
+
+        } catch (SQLException e) {
+            System.err.printf("%s: %s\n", e.getClass().getSimpleName(), e.getMessage());
+        }
     }
 }
